@@ -9,14 +9,17 @@ class CardTest
 {
     private Suite _suite = Suite.CLUB;
     private Rank _rank = Rank.KING;
-
-    private Suite _suiteMock = mock(Suite.class);
-    private Rank _rankMock = mock(Rank.class);
+    Card _card = new Card(_suite, _rank);
 
     @Test
     public void testGetSuiteFromCard()
     {
-        Card _card = new Card(_suite, _rank);
         assertEquals(_card.getSuite(), _suite);
+    }
+
+    @Test
+    public void testGetRank()
+    {
+        assertEquals(_card.getRank(), _rank);
     }
 }
